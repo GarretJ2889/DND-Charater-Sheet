@@ -187,6 +187,14 @@ function getProficiencyBonus() {
     setTimeout(() => (diceRollResult.style.display = 'none'), 5000);
   }
   
+  document.querySelectorAll('.rollable').forEach(element => {
+    element.addEventListener('click', () => {
+      const modifier = parseInt(element.dataset.modifier, 10) || 0; // Get the modifier from data attribute
+      const { roll, total } = rollD20(modifier); // Roll a d20 with the modifier
+      displayRollResult(roll, modifier, total); // Display the result
+    });
+  });
+
   
 
 

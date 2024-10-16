@@ -6,6 +6,20 @@ body {
   background-color: #f0e6d6; /* Parchment-like background */
 }
 
+.top-left-image {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10; /* Ensure the image stays on top of other elements */
+}
+
+.top-left-image img {
+  width: 100px; /* Adjust the size as needed */
+  height: auto;
+  border-radius: 10px; /* Optional: round the corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: add shadow effect */
+}
+
 .character-sheet {
   max-width: 800px;
   margin: auto;
@@ -226,4 +240,136 @@ li:hover {
 
 .inventory li:hover {
   background-color: #e0d8c3;
+}
+
+#diceRollResult {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  display: none;
+  z-index: 100;
+}
+
+.rollable {
+  cursor: pointer;
+}
+
+.rollable:hover {
+  background-color: #e0e0e0;
+}
+
+/* Rollable Elements - Border */
+.rollable {
+  border: 2px solid;
+  border-radius: 5px;
+  border-color: orange;
+}
+
+/* Hover Effect for Rollable Elements */
+.rollable:hover {
+  background-color: #f0f0f0;
+}
+
+.skill-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.skill-select {
+  width: 150px;
+}
+
+#skillsDisplay div {
+  margin-bottom: 5px;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content input {
+  margin-bottom: 10px;
+}
+
+#skillsDisplay div {
+  margin-bottom: 5px;
+}
+
+.inventory div {
+  display: flex;
+  align-items: center;
+}
+
+.inventory div input[type="checkbox"] {
+  margin-left: 5px;
+}
+
+.attunement {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.attunement-slot {
+  width: 30%;
+  padding: 10px;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  position: relative; /* For dropdown positioning */
+  transition: border-color 0.3s;
+}
+
+.attunement-slot:hover {
+  border-color: #4CAF50;
+}
+
+.attuned-item {
+  border: 2px solid gold;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 10;
+  display: none; /* Initially hidden */
+}
+
+.dropdown.show {
+  display: block;
+}
+
+.dropdown select {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
 }
